@@ -1,0 +1,45 @@
+<div class="profile-component">
+    <img class="background-image" src="https://vsegda-pomnim.com/uploads/posts/2022-04/1649325800_28-vsegda-pomnim-com-p-foto-morya-plyazha-43.jpg" alt="beach"/>
+    <div class="profile-component__data">
+        <img class="profile-component__data_ava" src="https://avatars.mds.yandex.net/get-mpic/4250892/img_id8395662957740284546.jpeg/orig" alt="ava" />
+        <div class="profile-component__data_info">
+            <p>Billy Herrington</p>
+            <ul>
+                <li>
+                    <span>Date of Birth:</span>
+                    <span>2 January</span>
+                </li>
+                <li>
+                    <span>City:</span>
+                    <span>New Yourk</span>
+                </li>
+                <li>
+                    <span>Education:</span>
+                    <span>Gachi club</span>
+                </li>
+                <li>
+                    <span>Web Site:</span>
+                    <span>https://some-web-site.com</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile-component__my-posts">
+        <p> class="profile-component__my-posts_title"</p>
+        <input 
+            class="profile-component__my-posts_input" 
+            type="text"
+            placeholder="your news...">
+        <div class="profile-component__my-posts_send-button_wrapper">
+            <button class="profile-component__my-posts_send-button">
+                Send
+            </button>
+        </div>
+        <div class="profile-component__my-posts_list">
+            <p *ngFor="let post of posts">
+                <a [routerLink]="['/profile/post', post.id]">{{post.text}}</a>
+                <router-outlet></router-outlet>
+            </p>
+        </div>
+    </div>
+</div>

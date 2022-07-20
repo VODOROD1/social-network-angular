@@ -1,18 +1,33 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MessagesComponent } from './messages/messages.component';
+import { NewsComponent } from './news/news.component';
+import { MusicComponent } from './music/music.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
+import { appRouterModule } from './router/router.module';
+import { PostsService } from './posts.service';
+import { PostComponent } from './profile/post/post.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfileComponent,
+    MessagesComponent,
+    NewsComponent,
+    MusicComponent,
+    SettingsComponent,
+    LeftSidebarComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    appRouterModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PostsService],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
